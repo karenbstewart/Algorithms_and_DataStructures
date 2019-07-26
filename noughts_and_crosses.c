@@ -155,7 +155,7 @@ int main(int argc, char **argv)
 		}
 	}
 	else if(strcmp(players_piece1, "O") == 0)
-	{	// Game code if player one selects noughts
+	{	// Game code if player one selects noughts in PLAYER vs COMPUTER
 		while(game_flag)
 		{
 			//int i;
@@ -175,10 +175,12 @@ int main(int argc, char **argv)
 					break;
 				}
 				printf("\n COMPUTERS TURN\n");
-				printf("\n pick the number of the grid you would like to place your X in : ");
-				fgets(position, 10, stdin);
-				remove_newline(position);
-				replace(array, atoi(position), "X");
+				
+				
+				search(array, "X", &*store_array, &free);
+				
+				
+				replace(array, free, "X");
 				display_game_board(array);
 				
 				check_winner(array, &won);
@@ -191,27 +193,46 @@ int main(int argc, char **argv)
 
 		}
 	}
-	
-	printf("\nTHIS IS ME!!\n");	
-	
-	search(array, "X", &*store_array, &free);
-	
-	/*
-	if(strcmp(store_array[0], "O") == 0 || strcmp(store_array[0], "X") == 0)
+	else if(strcmp(players_piece1, "X") == 0)
+	{// Game code if player one selects crosses in PLAYER vs COMPUTER
+	while(game_flag)
 	{
-		printf("\nTHIS IS ME 2!!\n");
-	} */
+		//int i;
+		for(i = 0; i < MAX; i++)
+		{
+			printf("\n NEXT TURN\n");
+			printf("\n pick the number of the grid you would like to place your %s in : ", players_piece1);
+			fgets(position, 10, stdin);
+			remove_newline(position);
+			int new_position = atoi(position);
+			replace(array, new_position, players_piece1);
+			display_game_board(array);
+			
+			check_winner(array, &won);
+			if(won == 1)
+			{
+				break;
+			}
+			printf("\n COMPUTERS TURN\n");
+				
+				
+			search(array, "O", &*store_array, &free);
+				
+				
+			replace(array, free, "O");
+			display_game_board(array);
+				
+			check_winner(array, &won);
+			if(won == 1)
+			{
+				break;				}		
+			}	
+	game_flag = 0;
 	
+	}
+}
 	
-	//replace(array, 6, "X");
-	//replace(array, 8, "X");
-	//display_game_board(array);
 
-	
-	//printf("\n%s\n", array[1]);
-	//printf("\n%sTHIS\n", store_array[5]);
-	//printf("\n%dHERE!!\n", free);
-	
 
 }
 //********** END OF MAIN FUNCTION *************
@@ -245,10 +266,6 @@ char* one_player(char *players_piece1)
 	}	
 	return players_piece1;	
 }
-
-
-
-
 
 //***** Function for player vs player game code *****
 char* two_player(char *players_piece)
@@ -408,9 +425,6 @@ void remove_newline(char *str)
 }
 //***************************
 
-
-
-
 // Insert Element at a position into an array
 void insert(char* array[], int pos, char* word)
 {
@@ -442,7 +456,7 @@ void replace(char* array[], int pos, char* word)
 	array[idx] = word;
 }
 //************************
-/*
+
 // Delete Element at a position into an array
 void delete(char* array[], int pos)
 {
@@ -453,21 +467,6 @@ void delete(char* array[], int pos)
 	}
 	array[idx - 1] = 0;
 }
-*/
-// Delete Element at a position into an array
-/*void delete(char* array[], int pos)
-{
-	int idx;
-	for(idx = pos; idx < MAX; idx++)
-	{
-		array[idx -1] = array[idx];
-	}
-	for(idx = MAX - 1; idx >= pos; idx--)
-	{
-		array[idx] = array[idx - 1];
-	}
-	array[idx] = 0;
-}*/
 //**************************
 
 // Reversing the Elements in an array
