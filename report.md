@@ -6,6 +6,10 @@
 This purpose of this coursework was to design and implement a noughts and crosses game written in the C programming language. I worked on designing both a PLAYER vs PLAYER mode of the game and a PLAYER vs COMPUTER mode. Looking to save the inputted commands in Array of different data types so they could be utilised at different areas of the code to achieve different outcomes. (ie, knowing when a row of 3 matching symbols had been reached so that a winner could be declared)
 
 ### DESIGN
+I implemented 2 different types of data structures 
+, arrays and structs based around these two types of data structures I implemented different algorithms to allow me to manipulate the data stored within these structures in different ways. 
+
+I implemented algorithms to initiate an array of a specific size outlined in a #define at the start of my program (with the thought behind this being that if I had had the time it would have helped me to implement bigger arrays fit for a larger game board in a simpler way allowing me to reuse existing code already in the porogram).
 
 ### ENHANCEMENTS 
 
