@@ -1,5 +1,5 @@
 # karen_stewart_ads
-repo for ADS coursework
+repository for Algorithm and Data Structures coursework in C.
 
 ## instructions for compiling and playing the noughts and crosses game
 A make file is included for this program. 
