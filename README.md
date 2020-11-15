@@ -1,5 +1,9 @@
 # Algorithms and Data Structures 
-repository for Algorithm and Data Structures coursework in C.
+Repository for Algorithm and Data Structures Coursework of noughts and crosses game in the C language.
+
+![Unique](https://img.shields.io/badge/Author-Karen%20B%20Stewart-%2343c7e8.svg?style=flat)
+
+![GitHub](https://img.shields.io/github/license/karenbstewart/Advanced_Database_Systems?style=flat)
 
 ## instructions for compiling and playing the noughts and crosses game
 A make file is included for this program. 
