@@ -1,4 +1,4 @@
-# karen_stewart_ads
+# Algorithms and Data Structures 
 repository for Algorithm and Data Structures coursework in C.
 
 ## instructions for compiling and playing the noughts and crosses game
